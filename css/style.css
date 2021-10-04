@@ -44,7 +44,7 @@ a{
 .btn-one:hover::after {
 	transform: scaleY(.9);
 }
-.product-icon {
+.product-icon{
 	display: inline-block;
 	height: 2.5rem;
 	width: 2.5rem;
@@ -208,10 +208,10 @@ a{
 }
 /* Banner Section */
 .banner-section{
-    height: 100vh;
+
 }
 .left-sidebar{
-    height: 700px;
+    height: 600px;
     flex-basis: 300px;
     overflow-y: scroll;
 }
@@ -223,11 +223,15 @@ a{
 }
 .left-sidebar ul{
     list-style: none;
+    border: 1px solid #ddd;
 }
-.left-sidebar ul li{}
+.left-sidebar ul li{
+    border-bottom: 1px solid #ddd;
+}
 .left-sidebar ul li a{
     display: block;
-    padding: 1rem 0;
+    padding: .6rem;
+
 }
 .banner-content{
     flex-grow: 1;
@@ -258,21 +262,21 @@ a{
     position: relative;
     z-index: 1;
 }
-.banner-bottom-item::after{
-    content: "";
-    background: transparent;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-    transform: scale(1);
-    border: 5px solid var(--white);
-    transition: all .4s ease-in-out;
+.banner-bottom-item::after {
+	content: "";
+	background: transparent;
+	top: -3%;
+	left: -3%;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	transform: scale(1);
+	border: 10px solid var(--white);
+	transition: all .4s ease-in-out;
 }
 .banner-bottom-item:hover::after{
-    transform: scale(.9);
+    transform: scale(.8);
 }
 .banner-bottom-item p{
     color: var(--red);
@@ -308,4 +312,135 @@ a{
     background: url(../img/banner-product/bg3.jpg) no-repeat 100%;
     background-size: cover;
     color: var(--white);
+}
+/* new-trending-product-section */
+.new-trending-product-section{
+    padding: 2rem 0;
+}
+.section-title{
+    padding: 1rem 0;
+}
+.section-title h2{
+    font-size: 2.5rem;
+    position: relative;
+}
+.section-title h2::after{
+    content: "";
+    width: 150px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--red);
+}
+.product-table{
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.product-item{
+    flex-basis: 24%;
+    margin-bottom: 1rem;
+    transition: all .4s ease-in-out;
+}
+.product-item:hover{
+    transform: translateY(-10px);
+}
+.product-item-img{
+    background: #f5f5f5;
+    position: relative;
+    text-align: center;
+}
+.product-item-img .discount{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.product-item-img ul{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    list-style: none;
+    transition: all .4s ease-in-out;
+}
+.product-item-img ul li{}
+.product-item-img ul li a{
+    margin: .4rem 0;
+}
+.product-item:hover ul{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-20px);
+}
+.product-item h3 a:hover{
+    color: var(--red);
+}
+.product-item p{
+    justify-content: space-between;
+}
+.product-item .ratting{
+    color: #ffc107;
+    margin-bottom: .5rem;
+}
+.product-item p > span{
+    color: var(--red);
+}
+/* offer-section */
+.offer-section{
+    background: url(../img/offer-bg.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 100px;
+}
+.offer-content-inner{
+    width: 50%;
+}
+.offer-content h1 {
+	font-size: 7rem;
+	color: #4a4747;
+	opacity: 0.15;
+}
+.offer-content h6 {
+	color: var(--red);
+	font-size: 1.5rem;
+}
+.offer-content h3 {
+	font-size: 2.3rem;
+}
+.offer-content p {
+	font-size: 1.2rem;
+	padding: 1rem 0;
+}
+.offer-content-inner > span{
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding-top: 20px;
+    animation: shrink 2s ease-in-out infinite alternate-reverse;
+}
+.offer-content-inner span p{
+    margin: 0;
+    padding: 0;
+}
+@keyframes shrink {
+    0%{
+        transform: scaleX(.95);
+    }
+    30%{
+        transform: scaleX(.9);
+    }
+    50%{
+        transform: scaleX(.8);
+    }
+    75%{
+        transform: scaleX(.75);
+    }
+    100%{
+        transform: scaleX(.7);
+    }
 }
